@@ -121,7 +121,6 @@
             color: #ccc;
         }
 
-        /* Estilos para la pantalla de carga */
         .loader-container {
             position: fixed;
             top: 0;
@@ -170,7 +169,6 @@
         <source src="resources/1.mp4" type="video/mp4">
     </video>
 
-    <!-- Pantalla de carga -->
     <div class="loader-container" id="loader">
         <div class="loader"></div>
     </div>
@@ -197,6 +195,10 @@
             </div>
             <p id="error-message" class="text-danger mt-2" style="display: none;"></p>
         </form>
+
+        <!-- Botón para regresar al inicio -->
+        <button onclick="window.location.href='index.html';" class="btn btn-secondary w-100 mt-3">Volver al Inicio</button>
+
         <footer>
             <p>© 2025 ELMARIANAZONE</p>
         </footer>
@@ -204,14 +206,13 @@
 
     <script>
         document.getElementById("loginForm").addEventListener("submit", function(event) {
-            event.preventDefault(); // Evita el envío inmediato
-            document.getElementById("loader").style.visibility = "visible"; // Muestra la pantalla de carga
+            event.preventDefault(); 
+            document.getElementById("loader").style.visibility = "visible"; 
             
             setTimeout(() => {
-                window.location.href = "index.html"; // Redirige después de 2 segundos
+                window.location.href = "index.html"; 
             }, 2000);
         });
     </script>
-
 </body>
 </html>
