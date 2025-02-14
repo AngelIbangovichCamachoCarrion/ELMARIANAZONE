@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>ELMARIANAZONE-SOCIAL</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="favicon_index/favicon.ico" type="image/x-icon">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    
+    <!-- Scripts -->
+    <script src="js/script.js" defer></script>
+    <script src="js/theme.js" defer></script>
+    <script src="js/loading.js" defer></script>
+</head>
+<body>
+
+    <!-- Header Responsivo -->
+    <header class="header bg-dark text-light py-3">
+        <div class="container d-flex flex-wrap justify-content-between align-items-center">
+            <!-- Solo el icono redirige -->
+            <a href="perfil.html" class="text-light text-decoration-none d-flex align-items-center">
+                <img src="icono.png" alt="Logo" class="me-2" style="height: 40px;">
+            </a>
+            <a href="timeline.html" class="text-light text-decoration-none d-flex align-items-center">
+            <span class="fw-bold" style="font-family: 'Dancing Script', cursive;">ELMARIANAZONE-SOCIAL</span>
+            </a>
+            <!-- Barra de búsqueda -->
+            <div class="search-container d-flex flex-grow-1 mx-3">
+                <input type="text" class="form-control me-2" placeholder="Buscar...">
+                <button class="btn btn-outline-light"><i class="fas fa-search"></i></button>
+            </div>
+
+            <!-- Botones -->
+            <div class="d-flex">
+                <a href="#" id="loginBtn" class="btn btn-light me-2">Login</a>
+                <button class="btn btn-outline-light theme-toggle"><i class="fas fa-moon"></i></button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Contenido -->
+    <main class="container mt-4">
+        <section class="posts" id="post-container"></section>
+    </main>
+
+    <!-- Pantalla de carga -->
+    <div id="loadingScreen" class="loading-overlay">
+        <div class="loading-spinner"></div>
+        <p>Cargando, espera...</p>
+    </div>
+
+    <!-- Bootstrap JS & jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

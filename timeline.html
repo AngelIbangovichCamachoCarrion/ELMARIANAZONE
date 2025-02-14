@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timeline - Red Social</title>
+    <link rel="shortcut icon" href="favicon_index/favicon.ico" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+        .profile-pic {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: #ccc; /* Color de fondo del círculo */
+            display: block;
+            overflow: hidden; /* Para que la imagen no se salga del círculo */
+        }
+        .profile-pic img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Hace que la imagen cubra el círculo */
+        }
+        .card-header {
+            display: flex;
+            align-items: center;
+        }
+                
+        .post img {
+            width: 100%;
+            border-radius: 10px;
+        }
+        .post {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container mt-4">
+        <h3 class="mb-4 text-center">ELMARIANAZONE-SOCIAL</h3>
+
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <!-- Publicación 1 -->
+                <div class="card post">
+                    <div class="card-header d-flex align-items-center">
+                        <div class="profile-pic me-2">
+                            <img src="https://randomuser.me/api/portraits/men/1.jpg" alt="Perfil">
+                        </div>
+                        <div>
+                            <strong>@AngelCC</strong><br>
+                            <small>Angel Camacho</small>
+                        </div>
+                    </div>
+                    <img src="resources/2.png" class="card-img-top" alt="Publicación">
+                    <div class="card-body">
+                        <p class="card-text">Me gusta el café pero me gustas más tú 😜!</p>
+                        <button class="btn btn-outline-danger like-btn">❤️ 120</button>
+                    </div>
+                </div>
+
+                <!-- Publicación 2 -->
+                <div class="card post">
+                    <div class="card-header d-flex align-items-center">
+                        <div class="profile-pic me-2">
+                            <img src="https://randomuser.me/api/portraits/men/2.jpg" alt="Perfil">
+                        </div>
+                        <div>
+                            <strong>@Poncho</strong><br>
+                            <small>Alfonso Castillo</small>
+                        </div>
+                    </div>
+                    <img src="resources/3.png" class="card-img-top" alt="Publicación">
+                    <div class="card-body">
+                        <p class="card-text">Vos pisado, que de ahuevo la vista cerote 😜</p>
+                        <button class="btn btn-outline-danger like-btn">❤️ 98</button>
+                    </div>
+                </div>
+
+                <!-- Publicación 3 -->
+                <div class="card post">
+                    <div class="card-header d-flex align-items-center">
+                        <div class="profile-pic me-2">
+                            <img src="https://randomuser.me/api/portraits/men/3.jpg" alt="Perfil">
+                        </div>
+                        <div>
+                            <strong>@CesarBerrones</strong><br>
+                            <small>CesarRicardo</small>
+                        </div>
+                    </div>
+                    <img src="resources/4.png" class="card-img-top" alt="Publicación">
+                    <div class="card-body">
+                        <p class="card-text">Les prometo que di lo mejor de mí, este viaje fue de aprendizaje y de disfrutar! ❤️</p>
+                        <button class="btn btn-outline-danger like-btn">❤️ 200</button>
+                    </div>
+                </div>
+
+                <!-- Publicación 4 -->
+                <div class="card post">
+                    <div class="card-header d-flex align-items-center">
+                        <div class="profile-pic me-2">
+                            <img src="https://randomuser.me/api/portraits/men/4.jpg" alt="Perfil">
+                        </div>
+                        <div>
+                            <strong>@DanielGG</strong><br>
+                            <small>DanielGuerrero</small>
+                        </div>
+                    </div>
+                    <img src="resources/5.png" class="card-img-top" alt="Publicación">
+                    <div class="card-body">
+                        <p class="card-text">Por fin el patrón portando la poderosa de el América</p>
+                        <button class="btn btn-outline-danger like-btn">❤️ 900</button>
+                    </div>
+                </div>
+
+                <!-- Publicación 5 -->
+                <div class="card post">
+                    <div class="card-header d-flex align-items-center">
+                        <div class="profile-pic me-2">
+                            <img src="https://randomuser.me/api/portraits/men/5.jpg" alt="Perfil">
+                        </div>
+                        <div>
+                            <strong>@ItzelCC</strong><br>
+                            <small>AuroraCamacho</small>
+                        </div>
+                    </div>
+                    <img src="resources/6.png" class="card-img-top" alt="Publicación">
+                    <div class="card-body">
+                        <p class="card-text">Like y abro mi canal con tutoriales de maquillaje como este. Feliz halloween 🎃🦁</p>
+                        <button class="btn btn-outline-danger like-btn">❤️ 300</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function() {
+            $('.like-btn').click(function() {
+                let likes = parseInt($(this).text().replace('❤️ ', ''));
+                if ($(this).hasClass('liked')) {
+                    $(this).removeClass('liked btn-danger').addClass('btn-outline-danger');
+                    $(this).text(`❤️ ${likes - 1}`);
+                } else {
+                    $(this).addClass('liked btn-danger').removeClass('btn-outline-danger');
+                    $(this).text(`❤️ ${likes + 1}`);
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>

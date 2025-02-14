@@ -1,0 +1,265 @@
+/* General Styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+body.dark-mode {
+    background-color: #333;
+    color: #f4f4f9;
+}
+
+/* HEADER - Mantiene la barra de menú blanca */
+.header {
+    background-color: white !important; /* Siempre blanco */
+    color: black !important; /* Texto oscuro */
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 25px;
+    font-family: 'Lucida Handwriting', cursive;
+}
+
+/* Asegurar que el texto dentro del header siempre sea negro */
+.header a, .header .btn, .theme-toggle {
+    color: black !important;
+}
+
+/* Search Bar */
+.header__search {
+    display: flex;
+    align-items: center;
+    border: 2px solid black;
+    border-radius: 25px;
+    padding: 5px 10px;
+}
+
+.header__search input {
+    border: none;
+    outline: none;
+    font-size: 14px;
+    padding: 5px;
+    width: 200px;
+    color: black;
+    background-color: white;
+}
+
+/* Login Button */
+.header__login {
+    background: #007bff;
+    color: white;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 16px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.header__login:hover {
+    background: #0056b3;
+}
+
+/* Theme Toggle Button */
+.theme-toggle {
+    background: white !important;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    color: black !important;
+    margin-left: 10px;
+    padding: 5px;
+    border-radius: 50%;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    transition: transform 0.5s ease-in-out;
+}
+
+/* Modo oscuro - Mantiene el botón de tema claro */
+body.dark-mode .theme-toggle {
+    background: white !important;
+    color: black !important;
+}
+
+/* Agregamos animación de rotación */
+.theme-toggle i {
+    transition: transform 0.5s ease-in-out;
+}
+
+/* Clase para la animación */
+.rotate {
+    transform: rotate(360deg);
+}
+
+/* POSTS - Afectados por el modo oscuro */
+.posts {
+    margin: 20px auto;
+    max-width: 600px;
+    padding: 0 10px;
+}
+
+/* El color del texto y fondo de los posts cambia en modo oscuro */
+.post {
+    background: #fff;
+    padding: 20px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+}
+/* Estilos para imágenes en publicaciones */
+.post__image {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    object-fit: cover;
+    display: block;
+    margin: 10px 0;
+}
+
+.post__actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 5px;
+}
+
+.post__actions button {
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.comment-button {
+    color: #3498db;
+}
+
+.save-button {
+    color: #f39c12;
+}
+
+.comment-button:hover {
+    color: #217dbb;
+}
+
+.save-button:hover {
+    color: #d68910;
+}
+
+
+
+body.dark-mode .post {
+    background: #444;
+    color: white;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Like Button */
+.like-button {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    color: #ff3b30;
+    font-size: 20px;
+    transition: color 0.3s ease;
+}
+
+body.dark-mode .like-button {
+    color: #ff6347;
+}
+
+.like-button:hover {
+    color: #e60000;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .header__search input {
+        width: 150px;
+    }
+
+    .posts {
+        padding: 0 20px;
+    }
+
+    .post {
+        padding: 15px;
+    }
+}
+
+/* Fondo de la pantalla de carga */
+.loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    display: none; /* Oculto por defecto */
+    z-index: 9999;
+}
+
+/* Ajuste para pantallas pequeñas */
+@media (max-width: 768px) {
+    .header .search-container {
+        flex-direction: column;
+        width: 100%;
+    }
+    .search-container input {
+        width: 100%;
+        margin-bottom: 5px;
+    }
+    .search-container button {
+        width: 100%;
+    }
+    .header div.d-flex {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+/* Pantalla de carga adaptativa */
+.loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    display: none;
+    z-index: 9999;
+}
+
+/* Animación del spinner */
+.loading-spinner {
+    width: 50px;
+    height: 50px;
+    border: 5px solid rgba(255, 255, 255, 0.3);
+    border-top: 5px solid white;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+
